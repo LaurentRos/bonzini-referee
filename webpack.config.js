@@ -10,7 +10,7 @@ module.exports = {
     loaders:  [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'react-hot!babel
+      loader: 'react-hot-loader/webpack!babel'
     }]
   },
   resolve: {
@@ -22,7 +22,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
     hot: true
   },
   plugins: [
