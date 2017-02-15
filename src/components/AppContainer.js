@@ -4,12 +4,13 @@ import React from 'react';
 
 import Commands from './Commands'
 import TeamsScore from './TeamsScore'
+import '../style/style.css';
 
 @observer
 class AppContainer extends React.Component {
   render() {
     return (<div className="app-container">
-      <h1>Bonzini Referee</h1>
+      <h1 className="app-title">Bonzini Referee</h1>
       <TeamsScore />
       <Commands />
       <DevTools />

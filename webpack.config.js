@@ -15,6 +15,10 @@ var config = {
       {
         test: /\.js$/,
         loaders: ['babel']
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   },
