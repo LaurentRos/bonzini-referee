@@ -3,20 +3,20 @@ import mobx, { observable, computed } from 'mobx';
 class GoalStore {
   @observable store = {
     blue: {
-  goals: 0,
+      goals: 0,
       inOuts: 0
     },
     red: {
       goals: 0,
-  inOuts: 0
+      inOuts: 0
     },
-  teams: ['blue', 'red'],
-  enableHalf: false,
-  half: 0
+    teams: ['blue', 'red'],
+    enableHalf: false,
+    half: 0
   };
 
   constructor() {
-  mobx.autorun(() => console.log(this.score));
+    mobx.autorun(() => console.log(this.score));
   }
 
   @computed get score() {
