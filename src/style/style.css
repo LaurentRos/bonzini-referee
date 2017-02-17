@@ -5,3 +5,13 @@
   font-variant: small-caps;
   text-align: center;
 }
+
+.in-out-container {
+  display: flex;
+  justify-content: center;
+}
+
+.in-out-btn {
+  margin-left: 5px;
+  margin-right: 5px;
+}

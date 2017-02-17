@@ -1,14 +1,7 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 
-import Button from './Button'
 import goalStore from '../GoalStore'
-
-const scoreGoal = (team) => {
-  goalStore.store[team].goals ++
-  goalStore.store[team].goals += goalStore.store.half
-  goalStore.store.half = 0
-}
 
 const Commands = () => (
   <div className="commands">
@@ -21,22 +14,19 @@ const Commands = () => (
       </input>
       Enable Half
     </label>
-    { goalStore.store.teams.map((team, idx) => {
-      return(
-        <Button
-          key={idx}
-          action={ () => scoreGoal(team) }
-          label={`Goal ${team}`}
-        />
-      )
-    }) }
-    { goalStore.store.teams.map((team, idx) => {
-      return(
-        <button key={ idx } onClick={ () => goalStore.store[team].inOuts ++ }>
-          In-Out {team}
-        </button>
-      )
-    }) }
+    <div className="in-out-container">
+      { goalStore.store.teams.map((team, idx) => {
+        return(
+          <button
+            className="in-out-btn"
+            key={ idx }
+            onClick={ () => goalStore.store[team].inOuts ++ }
+          >
+            Gamelle {team} !
+          </button>
+        )
+      }) }
+    </div>
     {goalStore.store.enableHalf &&
       <button onClick= { () => goalStore.store.half ++ }>
         Score Half

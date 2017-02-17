@@ -16,12 +16,19 @@ class GoalStore {
   };
 
   constructor() {
-    mobx.autorun(() => console.log(this.score));
+    mobx.autorun(() => console.log(this.objectScore));
   }
 
   @computed get score() {
     return `Blue ${this.store.blue.goals - this.store.red.inOuts} - ` +
       `${this.store.red.goals - this.store.blue.inOuts} Red`;
+  }
+
+  @computed get objectScore() {
+    return {
+      "blue": this.store.blue.goals - this.store.red.inOuts,
+      "red": this.store.red.goals - this.store.blue.inOuts
+    }
   }
 }
 
