@@ -12,7 +12,8 @@ class GoalStore {
     },
     teams: ['blue', 'red'],
     enableHalf: false,
-    half: 0
+    half: 0,
+    gamelle: false
   };
 
   constructor() {

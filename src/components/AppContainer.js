@@ -13,7 +13,7 @@ class AppContainer extends React.Component {
       <h1 className="app-title">Bonzini Referee</h1>
       <ScoreButtons />
       <Commands />
-      <DevTools />
+      {/* <DevTools /> */}
     </div>);
   }
 }

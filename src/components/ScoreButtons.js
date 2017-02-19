@@ -4,6 +4,12 @@ import React from 'react';
 import goalStore from '../GoalStore'
 
 const scoreGoal = (team) => {
+  if (goalStore.store.gamelle) {
+    goalStore.store[team].inOuts ++
+    goalStore.store.gamelle = false
+    return;
+  }
+
   goalStore.store[team].goals ++
   goalStore.store[team].goals += goalStore.store.half
   goalStore.store.half = 0
@@ -11,16 +17,15 @@ const scoreGoal = (team) => {
 
 const ScoreButtons = () => (
   <div className="score-btn-container">
-    <button
-      onClick={ () => scoreGoal('blue') }
-    >
-      { goalStore.objectScore.blue }
-    </button>
-    <button
-      onClick={ () => scoreGoal('red') }
-    >
-      { goalStore.objectScore.red }
-    </button>
+    { goalStore.store.teams.map((team, idx) => (
+      <button
+        className={`${team}-btn score-btn`}
+        key={ idx }
+        onClick={ () => scoreGoal(team) }
+      >
+        { goalStore.objectScore[team] }
+      </button>
+    )) }
   </div>
 )
 

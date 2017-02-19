@@ -1,17 +1,58 @@
 .app-title {
   font-family: arial black;
-  font-size: 6em;
+  font-size: 8em;
   font-style: italic;
   font-variant: small-caps;
+  margin-bottom: 0.5em;
   text-align: center;
 }
 
-.in-out-container {
+.in-out-container, .half-container {
+  align-items: center;
   display: flex;
-  justify-content: center;
 }
 
 .in-out-btn {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.score-btn-container {
+  display: flex;
+  height: 45%;
+  width: 100%;
+}
+
+.score-btn {
+  border: none;
+  color: white;
+  font-size: 19em;
+  height: 100%;
+  width: 50%;
+}
+
+.in-out-btn {
+  flex-grow: 1;
+  font-family: Arial;
+  font-size: 5em;
+  /*height: 100%;*/
+  /*width: 50%;*/
+}
+
+.toggle-half {
+  flex-grow: 1;
+}
+
+.red-btn {
+  background-color: indianred;
+}
+
+.blue-btn {
+  background-color: steelblue;
+}
+
+.commands {
+  display: flex;
+  height: 20%;
+  justify-content: space-around;
 }
